@@ -16,7 +16,7 @@
         <ImageView
             android:layout_width="160dp"
             android:layout_height="160dp"
-            android:src="@drawable/baseline_message_24"
+            android:src="@drawable/message_icon"
             app:tint="@color/my_secondary"/>
 
         <TextView

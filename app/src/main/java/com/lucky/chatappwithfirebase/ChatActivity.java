@@ -104,7 +104,7 @@ public class ChatActivity extends AppCompatActivity {
         chatRoomModel.setLastMessageTimestamp(Timestamp.now());
         chatRoomModel.setLastMessageSenderId(FirebaseUtil.currentUserId());
         chatRoomModel.setLastMessage(message);
-        FirebaseUtil.getChatRoomReference(chatroomId).set(chatRoomModel);
+        FirebaseUtil.getChatroomReference(chatroomId).set(chatRoomModel);
 
         ChatMessageModel chatMessageModel = new ChatMessageModel(message, FirebaseUtil.currentUserId(), Timestamp.now());
         FirebaseUtil.getChatroomMessageReference(chatroomId).add(chatMessageModel)
@@ -119,7 +119,7 @@ public class ChatActivity extends AppCompatActivity {
     }
 
     void getOrCreateChatRoomModel(){
-        FirebaseUtil.getChatRoomReference(chatroomId).get().addOnCompleteListener(task -> {
+        FirebaseUtil.getChatroomReference(chatroomId).get().addOnCompleteListener(task -> {
             if (task.isSuccessful()){
                 chatRoomModel = task.getResult().toObject(ChatRoomModel.class);
                 if (chatRoomModel==null){
@@ -130,7 +130,7 @@ public class ChatActivity extends AppCompatActivity {
                             Timestamp.now(),
                             ""
                     );
-                    FirebaseUtil.getChatRoomReference(chatroomId).set(chatRoomModel);
+                    FirebaseUtil.getChatroomReference(chatroomId).set(chatRoomModel);
                 }
             }
         });

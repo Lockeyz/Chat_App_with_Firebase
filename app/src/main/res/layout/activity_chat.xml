@@ -35,7 +35,7 @@
         <ImageButton
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:src="@drawable/icon_back"
+            android:src="@drawable/back_icon"
             android:background="?attr/selectableItemBackgroundBorderless"
             app:tint="@color/white"
             android:layout_marginEnd="10dp"
@@ -77,7 +77,7 @@
         <ImageButton
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@drawable/icon_send"
+            android:src="@drawable/send_icon"
             android:layout_alignParentEnd="true"
             android:layout_centerInParent="true"
             android:background="?attr/selectableItemBackgroundBorderless"
