@@ -47,6 +47,7 @@ public class SearchUserRecyclerAdapter extends FirestoreRecyclerAdapter<UserMode
                 });
 
         holder.itemView.setOnClickListener(v -> {
+            // navigate to chat activity
             Intent intent = new Intent(context, ChatActivity.class);
             AndroidUtil.passUserModelAsIntent(intent, model);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
