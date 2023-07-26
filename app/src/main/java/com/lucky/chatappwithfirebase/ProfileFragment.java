@@ -149,12 +149,12 @@ public class ProfileFragment extends Fragment {
         setInProgress(true);
 
         FirebaseUtil.getCurrentProfilePicStorageRef().getDownloadUrl()
-                        .addOnCompleteListener(task -> {
-                            if (task.isSuccessful()){
-                                Uri uri = task.getResult();
-                                AndroidUtil.setProfilePic(getContext(), uri, profilePic);
-                            }
-                        });
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()){
+                        Uri uri = task.getResult();
+                        AndroidUtil.setProfilePic(getContext(), uri, profilePic);
+                    }
+                });
 
         FirebaseUtil.currentUserDetails().get().addOnCompleteListener(task -> {
             setInProgress(false);
